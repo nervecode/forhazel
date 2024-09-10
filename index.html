@@ -1,0 +1,120 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>hello.</title>
+</head>
+
+<body>
+
+    <!-- Envelope Button -->
+    <div class="envelope" onclick="showMessage()">
+        &#9993;
+    </div>
+
+    <!-- Message Box with Question -->
+    <div class="message" id="messageBox">
+        <p>Do you love me?</p>
+        <button class="btn-yes" onclick="showYesResponse()">Yes</button>
+        <button class="btn-no" onclick="showNoResponse()">No</button>
+        <div id="responseText"></div> <!-- Area for showing response -->
+    </div>
+
+    <div class="container">
+        <!-- First Flower -->
+        <div class="flower flower-1">
+            <div class="mid"></div>
+            <div class="Petal1 p1"></div>
+            <div class="Petal1 p2"></div>
+            <div class="Petal1 p3"></div>
+            <div class="Petal1 p4"></div>
+            <div class="Petal2 p1"></div>
+            <div class="Petal2 p2"></div>
+            <div class="Petal2 p3"></div>
+            <div class="Petal2 p4"></div>
+            <div class="Petal3 p1"></div>
+            <div class="Petal3 p2"></div>
+            <div class="Petal3 p3"></div>
+            <div class="Petal3 p4"></div>
+        </div>
+
+        <!-- Second Flower (Center, Transforms to Heart) -->
+        <div class="flower flower-center">
+            <div class="mid"></div>
+            <div class="Petal1 p1"></div>
+            <div class="Petal1 p2"></div>
+            <div class="Petal1 p3"></div>
+            <div class="Petal1 p4"></div>
+            <div class="Petal2 p1"></div>
+            <div class="Petal2 p2"></div>
+            <div class="Petal2 p3"></div>
+            <div class="Petal2 p4"></div>
+            <div class="Petal3 p1"></div>
+            <div class="Petal3 p2"></div>
+            <div class="Petal3 p3"></div>
+            <div class="Petal3 p4"></div>
+        </div>
+
+        <!-- Third Flower -->
+        <div class="flower flower-3">
+            <div class="mid"></div>
+            <div class="Petal1 p1"></div>
+            <div class="Petal1 p2"></div>
+            <div class="Petal1 p3"></div>
+            <div class="Petal1 p4"></div>
+            <div class="Petal2 p1"></div>
+            <div class="Petal2 p2"></div>
+            <div class="Petal2 p3"></div>
+            <div class="Petal2 p4"></div>
+            <div class="Petal3 p1"></div>
+            <div class="Petal3 p2"></div>
+            <div class="Petal3 p3"></div>
+            <div class="Petal3 p4"></div>
+        </div>
+    </div>
+
+    <div class="password-container">
+        <h2>Click message icon before entering password.</h2>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="verifyPassword()">Submit</button>
+        <p id="errorMessage" class="error-message">Incorrect password. Try again.</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.style.display = 'block'; // Show message when envelope is clicked
+        }
+
+        function showYesResponse() {
+            document.getElementById('responseText').innerHTML = 'What is the password?';
+            setTimeout(() => {
+                document.getElementById('messageBox').style.display = 'none'; // Hide message after 3 seconds
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+
+        function showNoResponse() {
+            document.getElementById('responseText').innerHTML = 'wrong answer';
+            setTimeout(() => {
+                document.getElementById('messageBox').style.display = 'none'; // Hide message after 3 seconds
+            }, 3000); // 3000 milliseconds = 3 seconds
+        }
+
+        function verifyPassword() {
+            const password = document.getElementById('passwordInput').value;
+            const correctPassword = 'MAY122021';
+
+            if (password === correctPassword) {
+                window.location.href = 'success.html'; // Redirect to success page
+            } else {
+                document.getElementById('errorMessage').style.display = 'block'; // Show error message
+            }
+        }
+    </script>
+
+</body>
+
+</html>

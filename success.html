@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="letter.css"> <!-- New CSS file -->
+    <title>Success</title>
+</head>
+
+<body>
+    <!-- Back Button -->
+    <div class="back-button" onclick="goBack()">
+        &#8592; Back
+    </div>
+
+    <!-- Play Me Button -->
+    <div class="play-button" onclick="playContent()">
+        Play Me
+    </div>
+
+
+
+    <div class="success-container">
+        <h2>Congratulations!</h2>
+        <p>You have successfully unlocked the secret!</p>
+        <div class="letter-container">
+            <button class="show-letter-button" onclick="showLetter()">Read Me</button>
+            <div class="letter-content" id="letterContent">
+                <!-- Letter content goes here -->
+                <p>Hello, my love. It's been another month of ups and downs but I'm still head over heels for you.
+                    I'm so glad you're still here with me even though I know that you're tired. We survived another
+                    month,
+                    a month full of sadness, misunderstandings, anxieties, pressures, stress, and more negative emotions
+                    that we feel to be exact.
+                    even with these challenges we are facing, I pray for you not to give up, again. I know they're times
+                    I'm an unnecessary for you or
+                    unimportant. I pray those negative emotions you feel towards me will soon be faded. Sorry if
+                    sometimes I'm acting like a child,
+                    begging for your attention 24/7, sorry kung makulit ako, that is just how I'm feeling because I'm
+                    comfortable with you,
+                    it actually hurts when you say you feel awkward around me or you're being uncomfortable:( <span
+                        class="green">I
+                        miss you.</span>
+                    Baby, Hon, Mahal I don't wanna see u feeling the regrets beside me. I don't know what hurts the
+                    most. Your approach or those regrets or...
+                    giving you so many reasons to leave me. for real, I don't want to lose you:( I feel like I'm tied,
+                    I feel that everytime you say that you don't want me,.. I know you want me. Your words tells me but
+                    your actions oppose.
+                    But you know baby sometimes I think I'm just being convinient to you kaya medj napipilitan ka pero I
+                    know I've been bad for you because seeing you right know is of course, worst. Tell me if I said
+                    anything that I mustn't be feeling.
+                    Myself tells me not to leave you but instead hug you for what you're now. If I can't embrace these
+                    part of you,
+                    myself tells how can I marry you? how can I build a future with you, a family?
+                    Sometimes I realised giving you something is not a way that you want, but my way for you,
+                    I mean it's part of my love language that I thought if I'd be like that everything will be fine,
+                    I didn't see other important details of your wants.
+                    I didn't understand clearly I just know you're here with me but didn't even give you enough reason
+                    to stay.
+                    Let's say you're very thankful for it, but possible if you're hoping for something that is prolly on
+                    poor scale HAHAHAAHAHAH
+                    yun lang kasi problema sakin or satin mag kaiba tayo nang nakikita. Nagsisisi naman ako.
+                    What if dukutin ko tig isa nating mata tapos exchange djk. I didn't only want you, I want to keep
+                    you, keep you only in me.
+                    I know I deserve this but never in my mind tells me not to love you but to love you more and deeply.
+                    I don't hold any grudges from you instead I feel lucky. Lucky to have someone who can say what kind
+                    of person I am.
+                    I'm even willing to give myself to you anytime you want it u can get it, it's yours. happy 40th
+                    monthsary my love.
+                    I love you beyond everything, I'd love to see a never ending seconds, minutes, hours, days for us.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showLetter() {
+            const letterContent = document.getElementById('letterContent');
+            if (letterContent.style.display === 'none' || letterContent.style.display === '') {
+                letterContent.style.display = 'block';
+            } else {
+                letterContent.style.display = 'none';
+            }
+        }
+        function goBack() {
+            window.history.back();
+        }
+
+        function playContent() {
+            alert('Play content functionality goes here.');
+        }
+
+    </script>
+
+</body>
+
+</html>
