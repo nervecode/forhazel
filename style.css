@@ -73,8 +73,8 @@ body {
 /* Container for rotating flowers */
 .container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 150px; /* Adjusted size for smaller container */
+  height: 150px; /* Adjusted size for smaller container */
   margin: 100px auto;
   display: flex;
   align-items: center;
@@ -83,23 +83,23 @@ body {
 
 /* Flower styles */
 .flower {
-  height: 200px;
-  width: 200px;
+  height: 70px; /* Reduced size */
+  width: 70px; /* Reduced size */
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 0 15px rgba(255, 255, 0, 0.7)); /* Glowing effect */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.7)); /* Glowing effect */
 }
 
 .mid {
-  width: 50px;
-  height: 50px;
+  width: 17px; /* Reduced size */
+  height: 17px; /* Reduced size */
   border-radius: 50%;
   background: radial-gradient(circle, #000, #ff5e00, #000);
   z-index: 4;
   background-size: 5px 5px;
-  filter: drop-shadow(0 0 8px #682600);
+  filter: drop-shadow(0 0 3px #682600);
 }
 
 /* Petals with glowing effect */
@@ -109,28 +109,28 @@ body {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(circle, #ff5e00, #ffbb00);
-  filter: drop-shadow(0 0 15px rgba(#d9a404)); /* Glowing effect */
+  filter: drop-shadow(0 0 5px rgba(#d9a404)); /* Glowing effect */
 }
 
 .Petal1 {
-  left: 40px;
+  left: 13px; /* Adjusted for smaller size */
   z-index: 3;
-  width: 120px;
-  height: 30px;
+  width: 40px; /* Reduced size */
+  height: 10px; /* Reduced size */
 }
 
 .Petal2 {
   left: 0;
   z-index: 2;
-  width: 200px;
-  height: 40px;
+  width: 67px; /* Reduced size */
+  height: 13px; /* Reduced size */
 }
 
 .Petal3 {
-  left: 0px;
+  left: 0;
   z-index: 1;
-  width: 200px;
-  height: 40px;
+  width: 67px; /* Reduced size */
+  height: 13px; /* Reduced size */
 }
 
 /* Petal rotations */
@@ -185,19 +185,19 @@ body {
 /* Keyframes for rotating */
 @keyframes rotate-1 {
   from {
-    transform: rotate(0deg) translateX(150px);
+    transform: rotate(0deg) translateX(50px); /* Adjusted for smaller size */
   }
   to {
-    transform: rotate(360deg) translateX(150px);
+    transform: rotate(360deg) translateX(50px); /* Adjusted for smaller size */
   }
 }
 
 @keyframes rotate-3 {
   from {
-    transform: rotate(0deg) translateX(-150px);
+    transform: rotate(0deg) translateX(-50px); /* Adjusted for smaller size */
   }
   to {
-    transform: rotate(-360deg) translateX(-150px);
+    transform: rotate(-360deg) translateX(-50px); /* Adjusted for smaller size */
   }
 }
 
@@ -205,26 +205,16 @@ body {
 .flower-center {
   position: relative;
   filter: drop-shadow(
-    0 0 20px rgba(255, 255, 0, 0.8)
+    0 0 7px rgba(255, 255, 0, 0.8)
   ); /* Glowing effect for center flower */
 }
+
 .error-message {
   color: red;
   display: none;
 }
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #bf7e04;
-  font-family: Arial, sans-serif;
-}
 
-.password-container,
-.success-container {
-  text-align: center;
-  margin-top: 100px;
-}
-
+/* Password Container */
 .password-container input[type="password"] {
   padding: 10px;
   margin: 20px;
