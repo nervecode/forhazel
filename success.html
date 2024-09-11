@@ -16,19 +16,32 @@
     </div>
 
     <!-- Play Me Button -->
-    <div class="play-button" onclick="playContent()">
+    <div class="play-button" onclick="playMedia()">
         Play Me
     </div>
 
-
+    <!-- Video element for the video message -->
+    <div id="videoContainer" style="display: none;">
+        <video id="videoMessage" width="320" height="240" controls>
+            <source src="video-die-with-smile.mp4" type="video/mp4"> <!-- Add your video file here -->
+            Your browser does not support the video tag.
+        </video>
+        <!-- Close Button -->
+        <button class="close-video-btn" onclick="closeVideo()">Close Video</button>
+    </div>
 
     <div class="success-container">
         <h2>Congratulations!</h2>
         <p>You have successfully unlocked the secret!</p>
         <div class="letter-container">
-            <button class="show-letter-button" onclick="showLetter()">Read Me</button>
-            <div class="letter-content" id="letterContent">
-                <!-- Letter content goes here -->
+            <button class="show-letter-button" id="readMeBtn" onclick="showConfirmation()">Read Me</button>
+
+            <div id="confirmation" style="display: none;">
+                <p>Are you sure you want to read me?</p>
+                <button class="custom-btn" onclick="confirmRead()">Yes</button>
+            </div>
+
+            <div class="letter-content" id="letterContent" style="display: none;">
                 <p>Hello, my love. It's been another month of ups and downs but I'm still head over heels for you.
                     I'm so glad you're still here with me even though I know that you're tired. We survived another
                     month,
@@ -70,28 +83,64 @@
                     I'm even willing to give myself to you anytime you want it u can get it, it's yours. happy 40th
                     monthsary my love.
                     I love you beyond everything, I'd love to see a never ending seconds, minutes, hours, days for us.
+
+                    <!-- Letter content continues... -->
                 </p>
             </div>
         </div>
     </div>
 
     <script>
-        function showLetter() {
+        let isLetterVisible = false;
+
+        function showConfirmation() {
+            const confirmation = document.getElementById('confirmation');
             const letterContent = document.getElementById('letterContent');
-            if (letterContent.style.display === 'none' || letterContent.style.display === '') {
-                letterContent.style.display = 'block';
-            } else {
+            const readMeBtn = document.getElementById('readMeBtn');
+
+            if (isLetterVisible) {
                 letterContent.style.display = 'none';
+                readMeBtn.innerText = 'Read Me';
+                isLetterVisible = false;
+            } else {
+                confirmation.style.display = 'block';
             }
         }
+
+        function confirmRead() {
+            const confirmation = document.getElementById('confirmation');
+            const letterContent = document.getElementById('letterContent');
+            const readMeBtn = document.getElementById('readMeBtn');
+
+            confirmation.style.display = 'none';
+            letterContent.style.display = 'block';
+            readMeBtn.innerText = 'Close Message';
+            isLetterVisible = true;
+        }
+
         function goBack() {
             window.history.back();
         }
 
-        function playContent() {
-            alert('Play content functionality goes here.');
+        function playMedia() {
+            alert("Make sure you're the only one who can watch/hear this.");
+
+            // Show the video container and play the video
+            const videoContainer = document.getElementById('videoContainer');
+            const video = document.getElementById('videoMessage');
+            videoContainer.style.display = 'block';
+            video.play();
         }
 
+        function closeVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            const video = document.getElementById('videoMessage');
+
+            // Pause the video and hide the container
+            video.pause();
+            video.currentTime = 0; // Reset video to the beginning
+            videoContainer.style.display = 'none';
+        }
     </script>
 
 </body>
